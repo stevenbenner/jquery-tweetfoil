@@ -1,0 +1,8 @@
+/* TweetFoil Plugin */
+.tweetFoil {
+	list-style-type: none;
+	padding-left: 0;
+}
+.tweetFoil li {
+	margin-bottom: 10px;
+}
