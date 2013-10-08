@@ -9,9 +9,7 @@
 
 // constants
 var HOST = 'cdn.syndication.twimg.com',
-	PATH = '/widgets/timelines/',
-	TWEET_REGEX = /<li class="(?:\s*[\w-]+\s+)*?tweet(?:.*\r?\n)*?<\/li>/g,
-	CONTENT_REGEX = /<p class="e-entry-title">(.*)<\/p>/;
+	PATH = '/widgets/timelines/';
 
 /**
  * Pull tweets from Twitter using the specified widgit id and display them
@@ -36,14 +34,19 @@ $.fn.tweetFoil = function(opts) {
 		type: 'GET',
 		dataType: 'jsonp'
 	}).done(function(response) {
-		var rawTweets = parseResponse(response.body),
+		var rawTweets = $(response.body).find('.e-entry-title'),
 			count = options.limit > rawTweets.length ? rawTweets.length : options.limit,
-			i;
+			i = 0;
 
 		// add list items
-		for (i = 0; i < count; i++) {
-			list.append($('<li>').html(rawTweets[i]));
-		}
+		rawTweets.each(function() {
+			list.append($('<li>').append(this));
+
+			// break on limit
+			if (++i >= count) {
+				return false;
+			}
+		});
 
 		$this.append(list);
 	});
@@ -59,20 +62,3 @@ $.fn.tweetFoil.defaults = {
 	limit: 10,
 	className: 'tweetFoil'
 };
-
-/**
- * Parse the HTML string in the response body from Twitter
- * @param {Object} response The body property from the API response.
- * @return {array} Array of tweet HTML strings.
- */
-function parseResponse(response) {
-	var rawTweets = [],
-		found;
-
-	// find the tweets via a regexp search
-	while ((found = TWEET_REGEX.exec(response)) !== null) {
-		rawTweets.push(found[0].match(CONTENT_REGEX)[1]);
-	}
-
-	return rawTweets;
-}
