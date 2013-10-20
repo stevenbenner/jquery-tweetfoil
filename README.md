@@ -6,7 +6,7 @@ TweetFoil is a jQuery twitter timeline plugin that works in the post-version-1.1
 
 ## Important Information
 
-* **This is a parser.** This plugin is essentially an alternative client for the [official Twitter Timeline Widget](https://dev.twitter.com/docs/embedded-timelines). It still requires you to setup your Twitter feed on your Twitter account and obtain a Twitter WidgetID.
+* **This is a parser.** This plugin is essentially an alternative client for the [official Twitter Timeline Widget](https://dev.twitter.com/docs/embedded-timelines). It still requires you to setup your Twitter feed on your Twitter account and obtain a Twitter Widget ID.
 * **This does not use the Twitter API.** It uses the same data source as the official Twitter Widget and completely ignores the Twitter API.
 * **This plugin is fragile.** Since it works by parsing the HTML output Twitter uses for its widget this plugin is likely to break if and when Twitter makes significant changes to the markup they use, their data structure, or their service endpoints. Do not use it for mission-critical applications.
 * **This is a work in progress.** While this plugin is currently functional, it is missing most of the features of the most popular pre-1.1 Twitter feed plugins. Feel free to submit pull requests and feature requests for the features you need.
