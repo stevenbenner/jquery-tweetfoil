@@ -8,7 +8,8 @@
  */
 
 // constants
-var HOST = 'cdn.syndication.twimg.com',
+var SCHEME = 'https',
+	HOST = 'cdn.syndication.twimg.com',
 	PATH = '/widgets/timelines/';
 
 /**
@@ -24,7 +25,7 @@ $.fn.tweetFoil = function(opts) {
 
 	// pull the data from the twitter api
 	$.ajax({
-		url: 'https://' + HOST + PATH + options.widgetId,
+		url: SCHEME + '://' + HOST + PATH + options.widgetId,
 		data: {
 			'dnt': 'true',
 			'lang': 'en',
