@@ -31,7 +31,6 @@ $.fn.tweetFoil = function(opts) {
 			'lang': 'en',
 			'suppress_response_codes': 'true'
 		},
-		cache: false,
 		dataType: 'jsonp'
 	}).done(function(response) {
 		var rawTweets = $(response.body).find('.e-entry-title'),
