@@ -21,7 +21,7 @@ var SCHEME = 'https',
 $.fn.tweetFoil = function(opts) {
 	var $this = this,
 		options = $.extend({}, $.fn.tweetFoil.defaults, opts),
-		list = $('<ul></ul>').addClass(options.className);
+		list = $('<ul/>').addClass(options.className);
 
 	// pull the data from the twitter api
 	$.ajax({
