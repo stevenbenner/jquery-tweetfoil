@@ -209,5 +209,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('build:css', [ 'csslint', 'copy:css', 'cssmin' ]);
 	grunt.registerTask('build:docs', [ 'copy:examples', 'copy:license', 'copy:changelog' ]);
 	grunt.registerTask('build:release', [ 'clean:dist', 'build', 'compress' ]);
+	grunt.registerTask('travis', [ 'test' ]);
 
 };
