@@ -32,7 +32,6 @@ $.fn.tweetFoil = function(opts) {
 			'suppress_response_codes': 'true'
 		},
 		cache: false,
-		type: 'GET',
 		dataType: 'jsonp'
 	}).done(function(response) {
 		var rawTweets = $(response.body).find('.e-entry-title'),
