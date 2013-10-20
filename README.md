@@ -2,7 +2,7 @@
 
 TweetFoil is a jQuery twitter timeline plugin that works in the post-version-1.1 Twitter API world. It lets you embed your twitter timeline on directly your web page without needing to install any server-side code and without using iframes, giving you the chance to customize the look of your Twitter feed with CSS.
 
-[![Build Status](https://travis-ci.org/stevenbenner/jquery-tweetfoil.png?branch=master)](https://travis-ci.org/stevenbenner/jquery-tweetfoil)
+[![Build Status](https://travis-ci.org/stevenbenner/jquery-tweetfoil.png?branch=master)](https://travis-ci.org/stevenbenner/jquery-tweetfoil) [![Dependency Status](https://gemnasium.com/stevenbenner/jquery-tweetfoil.png)](https://gemnasium.com/stevenbenner/jquery-tweetfoil)
 
 ## Important Information
 
